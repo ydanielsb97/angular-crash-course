@@ -1,0 +1,52 @@
+<div class="comment-form-main-container">
+    <form class="comment-form" (ngSubmit)="submitHandler()">
+        <div class="input-group">
+            <label for="name">Name: </label>
+            <input type="text" [(ngModel)]="name" name="name">
+        </div>
+        <div class="input-group">
+            <label for="email">Email: </label>
+            <input type="text" [(ngModel)]="email" name="email">
+        </div>
+        <div class="input-group">
+            <label for="comment">Comment: </label>
+            <textarea type="text" [(ngModel)]="comment" name="comment"></textarea>
+        </div>
+        <button>Submit</button>
+    </form>
+
+    <!-- <div *ngIf="showInformation">
+    <h3>Provided Information:</h3>
+    <p>Name: {{ name }}</p>
+    <p>Email: {{ email }}</p>
+    <p>Comment: {{ comment }}</p>
+</div> -->
+
+    <!-- <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Comment</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let msg of messages; index as i">
+                <td>{{ i + 1 }}</td>
+                <td>{{ msg.name }}</td>
+                <td>{{ msg.email }}</td>
+                <td>{{ msg.comment }}</td>
+            </tr>
+        </tbody>
+    </table> -->
+
+    <div class="messages-container">
+        <app-message-details
+            *ngFor="let msg of messages; index as i"
+            [message]="msg"
+            [index]="i"
+            (delete)="deleteMessage($event)"
+        ></app-message-details>
+    </div>
+</div>

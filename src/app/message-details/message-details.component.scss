@@ -1,0 +1,15 @@
+h3 {
+    margin: 0
+}
+
+:host {
+    display: block;
+    margin-top: 15px;
+    border: 1px solid rgb(34, 34, 34);
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.message-card__header {
+    margin-bottom: 15px;
+}

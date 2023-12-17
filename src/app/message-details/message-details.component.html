@@ -1,0 +1,12 @@
+<div class="message-card">
+    <div class="message-card__header">
+        <h3>{{ message.name }}</h3>
+        <span>{{ message.email }}</span>
+    </div>
+
+    <div class="message-card__body">
+        {{ message.comment }}
+    </div>
+
+    <button (click)="handlerClickDelete()">Delete</button>
+</div>
